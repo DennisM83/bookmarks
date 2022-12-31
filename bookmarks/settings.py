@@ -70,17 +70,41 @@ TEMPLATES = [
     },
 ]
 
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+
 WSGI_APPLICATION = 'bookmarks.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+        'ENGINE': config('PGENGINE'),
+
+        'NAME': config('PGDB'),
+
+        'USER': config('PGUSER'),
+
+        'PASSWORD': config('PGPASSWORD'),
+
+        'HOST': config('PGHOST'),
+
+        'PORT': config('PGPORT'),
+
     }
+
 }
 
 
