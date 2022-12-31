@@ -27,7 +27,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['https://bookmarks-production-78da.up.railway.app/', 'localhost']
+ALLOWED_HOSTS = ['bookmarks-production-78da.up.railway.app', 'localhost']
 
 
 # Application definition
